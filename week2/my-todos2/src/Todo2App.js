@@ -1,11 +1,11 @@
 import React from "react"
-import Todos from "./Todo2Store.js"
+import Todos from "./todo2Store.js"
 import './App.css'
 
 function Todo2App() {
   return (
-    <div className="Todo2App">
-    
+    <div className="TodoApp2">
+    <Todos/>
     </div>
   );
 }

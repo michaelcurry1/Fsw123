@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './ TodoApp2';
-import Todos from './Todo2Store'
+import Todo2App from './Todo2App';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Todo2App />
   </React.StrictMode>,
   document.getElementById('root')
 );

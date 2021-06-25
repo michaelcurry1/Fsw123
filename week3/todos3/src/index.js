@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './todo3App';
+import App from './Todo3App';
 
 
 ReactDOM.render(

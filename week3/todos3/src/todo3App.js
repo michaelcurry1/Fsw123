@@ -1,23 +1,72 @@
 import React from 'react';
 import './App.css';
+import Todo3List from './Todo3List'
+import todos from './todo3Store';
 
 
-function Todo2App() {
+class Todo3App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      aryTodos: todos.map((item, index) =>
+        ({
+          key: index,
+          id: item.id,
+          text: item.text,
+          isCompleted: item.isCompleted
+        })
+      )
+  }
+}
+
+ completeTodo = (e) =>{
+  if (e) {
+    let aryUpdatedTodos = [...this.state.aryTodos]
+    let index = aryUpdatedTodos.findIndex (item => item.id ===e);
+    let updatedTodo = {...aryUpdatedTodos[index]}
+    if(updatedTodo.isCompleted) {
+      updatedTodo.isCompleted = false
+    } else{
+      updatedTodo.isCompleted = true
+    }
+    aryUpdatedTodos[index] = updatedTodo
+    this.setState({
+      aryTodos: aryUpdatedTodos
+    })
+  }
+}
+deleteTodo = (e) => {
+  if (e) {
+    let aryDeletedTodos = [...this.state.aryTodos]
+    let index = aryDeletedTodos.findIndex( item => item.id === e);
+    aryDeletedTodos.splice(index, 1)
+    this.setState({
+      aryTodos: aryDeletedTodos
+    })
+  }  
+}
+
+render() {
+  const todoLists = this.state.aryTodos.map((item, index) => {
+    return (
+      <Todo3List
+      key = {item.key}
+      id = {item.id}
+      text = {item.text}
+      isCompleted = {item.isCompleted}
+      completeTodo = {this.completeTodo}
+      deleteTodo = {this.deleteTodo}
+      />
+    )
+  })
   return (
-    <div className="TodoApp2">
-      <h1 className = "centerTodo">List Of Todos</h1>
-      {console.log(Todos[0].text)}
-    <TodoList todoItems={Todos}/>
+    <div className= 'Todo3Span'>
+      <div className= "Todo3Span">My Todo List Number 3</div>
+      {todoLists}
     </div>
-  );
-}
-const completeTodo = (id) =>{
-
-}
-const deleteTodo = (id) =>{
-  
+    )
+  }
 }
 
-
-export default Todo2App;
+export default Todo3App;
 

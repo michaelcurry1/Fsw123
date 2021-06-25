@@ -32,7 +32,9 @@ class RollDice extends Component{
       <div>
         <Die pips={this.state.die1} />
         <Die pips={this.state.die2} />
+        <div>
         <button onClick={this.roll}>Roll Dice</button>
+        </div>
       </div>
     )
   }

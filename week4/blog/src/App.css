@@ -1,0 +1,9 @@
+.links{
+  text-align: center;
+  justify-content: space-around;
+  display:flex;
+}
+.links a {
+  font-size: 25px;
+
+}

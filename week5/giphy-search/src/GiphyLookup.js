@@ -10,7 +10,7 @@ function GiphyLookup({initialQuery}) {
 
         setLoading(true);
         const encodedQuery = encodeURIComponent(query);
-        const url = `https://api.giphy.com/v1/gifs/random?api_key-StGEROY7n9630aOR3Cn3JMMHPbNnEXwo&tag=${encodedQuery}`;
+        const url = `https://api.giphy.com/v1/gifs/random?api_key=StGEROY7n9630aOR3Cn3JMMHPbNnEXwo&tag=${encodedQuery}`;
 
         fetch(url, {
             method:'GET',
@@ -41,7 +41,7 @@ function GiphyLookup({initialQuery}) {
             <header>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="query" placeHolder="search phrase" style={{width:"225px"}}/> &nbsp;
-                    <button type="submit">Enter Search Words Here</button>
+                    <button type="submit">Enter</button>
                 </form>
             </header>
             <br></br>
@@ -51,7 +51,7 @@ function GiphyLookup({initialQuery}) {
                     {error &&<div>Error</div>}
                     {!loading && !error && !imgSrc &&
                     <div>Nothing Found</div>}
-                     {!loading && !error && !imgSrc &&
+                     {!loading && !error && imgSrc &&
                      <div><img src={imgSrc} alt = {alt} style={{width:'300px'}}/></div>
                      }
 
@@ -59,7 +59,7 @@ function GiphyLookup({initialQuery}) {
             </main>
         </div>
     )
-                    }
+ }                                    
 
    //
     export default GiphyLookup

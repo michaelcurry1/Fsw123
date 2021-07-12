@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import TodoList from './TodoList'
+import {listOfTodos} from './TodoStore';
+import TodoForm from './TodoForm';
+import {v4 as uuidv4} from 'uuid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+  const [todos, setTodo] = useState(listOfTodos)
+  const addTodo = text => {
+  const newTodo = [
+    ...todos, 
+    {
+      id: uuidv4(),
+      text:text,
+      isCompleted:false
+    }
+  ]
+  setTodo(newTodo)
+  }
+  const completeTodo = id =>{
+    const tempTodo = [
+      ...todos
+    ]
+    const index = tempTodo.findIndex(todo => todo.id === id)
+    tempTodo[index].isCompleted = !tempTodo[index].isCompleted
+    setTodo(tempTodo)
+  }
+  const deleteTodo = id =>{
+    const tempTodo = [
+      ...todos
+    ]
+    const newTodo = tempTodo.filter(todo => todo.id !==id)
+    setTodo(newTodo)
+
+  }
+
+  const editTodo = (id, text) => {
+    const tempTodo = [...todos];
+    const indwx = tempTodo.findIndex(todo => todo.id === id);
+    tempTodo[index].text = text;
+    setTodo(tempTodo)
+  }
+
+  return(
+    <>
+    <h1>Todo App 5</h1>
+    <TodoForm addTodo = {addTodo}/>
+    <TodoList todos = {todos} completeTodo = {completeTodo} deleteTodo = {deleteTodo} editTodo = {editTodo}/>
+    </>
+  )
 }
-
 export default App;

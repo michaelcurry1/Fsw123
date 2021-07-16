@@ -37,7 +37,7 @@ function App(){
 
   const editTodo = (id, text) => {
     const tempTodo = [...todos];
-    const indwx = tempTodo.findIndex(todo => todo.id === id);
+    const index = tempTodo.findIndex(todo => todo.id === id);
     tempTodo[index].text = text;
     setTodo(tempTodo)
   }

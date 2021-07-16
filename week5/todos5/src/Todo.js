@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Todo({todo, completeTodo,deleteTodo}){
+function Todo({todo, completeTodo,deleteTodo, editTodo}){
 
     const [edit, setEdit] = useState(false);
     const [error, setError] = useState(false);
@@ -30,11 +30,13 @@ function Todo({todo, completeTodo,deleteTodo}){
         </li>
         {!edit ? (
             <div>
-                <label style={styleComplete}for={todo.id}> {todo.text} </label>
+                <label style={{textDecoration:todo.isCompleted ? "line-through": ""}}for={todo.id}> {todo.text} </label>
             </div>
         ) : (
             <div>
-                <input type="type" value={text} style={("160px")} onChange={handleEdit}/>
+                <input type="type" value={text}  
+                // style={("150px")}
+                 onChange={handleEdit}/>
             </div>  
 
         )}

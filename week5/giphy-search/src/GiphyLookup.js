@@ -40,7 +40,7 @@ function GiphyLookup({initialQuery}) {
             <br></br>
             <header>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="query" placeHolder="search phrase" style={{width:"225px"}}/> &nbsp;
+                    <input type="text" name="query" placeholder="search phrase" style={{width:"225px"}}/> &nbsp;
                     <button type="submit">Enter</button>
                 </form>
             </header>

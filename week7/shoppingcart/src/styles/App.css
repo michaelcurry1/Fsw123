@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  max-height: 10vh;
+  background-color: #1e426b;
+  color: white;
+}
+
+input {
+  width: 3em;
+}
+
+.logo {
+  height: 5em;
+}
+
+.text {
+  width: 50%;
+}
+
+.add-btn:hover {
+  color: green;
+}
+.remove-btn:hover {
+  color: red;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  list-style: none;
+  color: white;
+}
+
+.react-link {
+  color: white;
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: lightgrey;
+  padding: 1em;
+  margin: 1em;
+}
+
+.cart-sticky {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 10%;
+}

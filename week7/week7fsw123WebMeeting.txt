@@ -1,0 +1,28 @@
+week 7 & 8 Redux and Capstone Reveiw.
+
+Consise definition of what state is?
+controls what app is showing.
+Condition for stored data .
+A way of keeping of,updating,and rendering varible info.in your app that is shared among different components.
+
+Native state management.
+
+What is redux?A javascript library does same thing as state.
+
+Benefits of context.Wrapping components.
+
+Easier than prop drilling.
+
+watched video of Mosh Hamedani on Redux.His intoduction
+
+some examples of Redux.Shopping cart
+
+I like the easy debugging.
+
+went over 4 fundamental parts of redux.
+
+Showed us your app for redux on milk and cookies.
+
+moved date on Capstone.
+
+Ideas on the Capstone project.
